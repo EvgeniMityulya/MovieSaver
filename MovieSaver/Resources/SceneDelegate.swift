@@ -21,7 +21,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = UIWindow(windowScene: windowScene)
         
         let initialViewController = MovieListBuilder.setupModule()
-        self.window?.rootViewController = initialViewController
+        let navigationController = UINavigationController(rootViewController: initialViewController)
+        self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
     }
 
