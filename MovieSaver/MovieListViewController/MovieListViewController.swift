@@ -29,6 +29,9 @@ final class MovieListViewController: UIViewController {
         movieTableView.dataSource = self
         movieTableView.delegate = self
         movieTableView.register(MovieTableViewCell.self, forCellReuseIdentifier: "movieCell")
+        movieTableView.separatorStyle = .none
+        movieTableView.backgroundColor = .clear
+        movieTableView.showsVerticalScrollIndicator = false
     }
     
     private func setupUI() {
@@ -40,7 +43,8 @@ final class MovieListViewController: UIViewController {
             self?.navigationController?.pushViewController(viewControler, animated: true)
         }))
         view.backgroundColor = .backgroundMainScreen
-        movieTableView.backgroundColor = .clear
+        
+        
     }
     
     private func setupViews() {
@@ -48,8 +52,8 @@ final class MovieListViewController: UIViewController {
         movieTableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             movieTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
-            movieTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 22),
-            movieTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -18),
+            movieTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            movieTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             movieTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
         ])
     }
@@ -72,6 +76,8 @@ extension MovieListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        212
+        let cellHeight = 212 + MovieTableViewCell.padding
+        return cellHeight
     }
+    
 }

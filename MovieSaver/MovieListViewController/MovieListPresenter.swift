@@ -13,6 +13,7 @@ protocol MovieListOutput {
 
 final class MovieListPresenter: MovieListOutput {
     
+    
     private unowned let input: MovieListInput
     
     init(input: MovieListInput) {

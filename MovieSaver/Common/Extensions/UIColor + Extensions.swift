@@ -19,5 +19,13 @@ extension UIColor {
     static var movieCellColor: UIColor {
         return UIColor(named: "movieCell") ?? .lightGray
     }
+    
+    static var subtitleTextColor: UIColor {
+        return UIColor(named: "subtitleText") ?? .systemBlue
+    }
+    
+    static var hintTextColor: UIColor {
+        return UIColor(named: "hintText") ?? .lightGray
+    }
 }
 
